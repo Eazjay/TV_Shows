@@ -4,9 +4,9 @@ class ShowsManager(models.Manager):
     def shows_validator(self, shows_data):
         errors = {}
         if len(shows_data['title']) < 2:
-            errors['title'] = "Title should be at least 5 characters"
+            errors['title'] = "Title should be at least 2 characters"
         if len(shows_data['network']) < 2:
-            errors['network'] = "Network should be at least 5 characters"
+            errors['network'] = "Network should be at least 2 characters"
         if len(shows_data['release_date']) < 5:
             errors['release_date'] = "Add a release date"
         if len(shows_data['desc']) < 10:

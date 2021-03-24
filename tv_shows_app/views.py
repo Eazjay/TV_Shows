@@ -31,16 +31,8 @@ def process_shows(request):
                 messages.error(request, value, extra_tags='desc')
         return redirect(f'/shows/new')
     else:
-        shows = Show.objects.get(id=id)
-        shows.title = request.POST['title']
-        shows.network = request.POST['network']
-        shows.release_date = request.POST['release_date']
-        shows.desc = request.POST['desc']
-        shows.save()
-        messages.success(request, "Show successfully update")
-        return redirect('/shows')
-    shows = Show.objects.create(title=request.POST['title'], network=request.POST['network'], release_date=request.POST['release_date'], desc=request.POST['desc'])
-    return redirect(f'/shows/{shows.id}')
+        shows = Show.objects.create(title=request.POST['title'], network=request.POST['network'], release_date=request.POST['release_date'], desc=request.POST['desc'])
+        return redirect(f'/shows/{shows.id}')
 
 def display_shows(request, id):
     context = {
