@@ -17,18 +17,54 @@
             <label for="title"> Title</label>
             <br>
             <input type="text" value="{{tv_show.title}}" name="title">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.extra_tags == 'title' %}
+                    <ul class="messages text-danger">
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
             <br><br>
             <label for="network">Network</label>
             <br>
             <input type="text" value="{{tv_show.network}}" name="network">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.extra_tags == 'network' %}
+                    <ul class="messages text-danger">
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
             <br><br>
             <label for="date">Release Date</label>
             <br>
             <input type="date" value="{{tv_show.release_date}}" name="release_date">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.extra_tags == 'release_date' %}
+                    <ul class="messages text-danger">
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
             <br><br>
             <label for="desc">Description</label>
             <br>
             <textarea name="desc">{{tv_show.desc}}</textarea>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.extra_tags == 'desc' %}
+                    <ul class="messages text-danger">
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
             <br>
             <input type="submit" value="Update" class="btn btn-primary">
         </form>
