@@ -1,6 +1,6 @@
 from django.db import models
 
-class ShowsManager(models.Manager):
+class Shows_Manager(models.Manager):
     def shows_validator(self, shows_data):
         errors = {}
         if len(shows_data['title']) < 2:
@@ -28,4 +28,4 @@ class Show(models.Model):
     desc = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects = ShowsManager()
+    objects = Shows_Manager()
