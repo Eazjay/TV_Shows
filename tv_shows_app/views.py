@@ -31,7 +31,12 @@ def process_shows(request):
                 messages.error(request, value, extra_tags='desc')
         return redirect(f'/shows/new')
     else:
-        shows = Show.objects.create(title=request.POST['title'], network=request.POST['network'], release_date=request.POST['release_date'], desc=request.POST['desc'])
+        shows = Show.objects.create(
+            title=request.POST['title'], 
+            network=request.POST['network'], 
+            release_date=request.POST['release_date'], 
+            desc=request.POST['desc']
+        )
         return redirect(f'/shows/{shows.id}')
 
 def display_shows(request, id):
