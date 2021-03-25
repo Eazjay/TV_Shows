@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container w-50 p-3">
+    <div class="container border w-50">
         <h1>Add a New Show <a class="btn btn-link float-end" href="/shows">Go Back</a></h1>
         <form action="/shows/create" method="post" class="form-group">
             {% csrf_token %}
@@ -22,9 +22,7 @@
             {% if messages %}
                 {% for message in messages %}
                     {% if message.extra_tags == 'title' %}
-                    <ul class="messages text-danger">
-                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    </ul>
+                        <p {% if message.tags %} class="{{ message.tags }} text-danger" {% endif %}>{{ message }}</p>
                     {% endif %}
                 {% endfor %}
             {% endif %}
@@ -35,9 +33,7 @@
             {% if messages %}
                 {% for message in messages %}
                     {% if message.extra_tags == 'network' %}
-                    <ul class="messages text-danger">
-                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    </ul>
+                        <p {% if message.tags %} class="{{ message.tags }} text-danger" {% endif %}>{{ message }}</p>
                     {% endif %}
                 {% endfor %}
             {% endif %}
@@ -48,9 +44,7 @@
             {% if messages %}
                 {% for message in messages %}
                     {% if message.extra_tags == 'release_date' %}
-                    <ul class="messages text-danger">
-                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    </ul>
+                        <p {% if message.tags %} class="{{ message.tags }} text-danger" {% endif %}>{{ message }}</p>
                     {% endif %}
                 {% endfor %}
             {% endif %}
@@ -61,9 +55,7 @@
             {% if messages %}
                 {% for message in messages %}
                     {% if message.extra_tags == 'desc' %}
-                    <ul class="messages text-danger">
-                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    </ul>
+                        <p {% if message.tags %} class="{{ message.tags }} text-danger" {% endif %}>{{ message }}</>
                     {% endif %}
                 {% endfor %}
             {% endif %}
