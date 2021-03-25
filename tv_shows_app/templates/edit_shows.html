@@ -10,7 +10,7 @@
     <title>TV Shows</title>
 </head>
 <body>
-    <div class="container w-50">
+    <div class="container mt-5 w-50">
         <h1>Edit Show {{tv_show.id}} <a href="/shows" class="btn btn-link float-end">Go to Shows</a></h1>
         <form action="/shows/{{tv_show.id}}/update" method="post" class="form-group">
             {% csrf_token %}

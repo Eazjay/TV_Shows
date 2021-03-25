@@ -69,6 +69,6 @@ def update_shows(request, id):
         return redirect(f'/shows/{tv_show.id}')
 
 def delete_shows(request, id):
-    tv_shows = Show.objects.get(id=id)
-    tv_shows.delete()
+    tv_show = Show.objects.get(id=id)
+    tv_show.delete()
     return redirect('/shows')
